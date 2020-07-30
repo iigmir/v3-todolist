@@ -1,9 +1,6 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Main from "../views/Main.vue";
 import Todo from "../views/Todo.vue";
-
-Vue.use(VueRouter);
 
 const routes = [
     {
@@ -18,6 +15,9 @@ const routes = [
     },
 ];
 
-const router = new VueRouter({ routes });
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes
+});
 
 export default router;
