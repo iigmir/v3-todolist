@@ -4,18 +4,18 @@
         <div>
             <ul>
                 <li v-for="(item, index) in todos" v-bind:key="index">
-                    <button>X</button> {{ item.todo1 }} ------ {{ item.todo2 }}
+                    <button>X</button> {{ item.name }} : {{ item.value }}
                 </li>
             </ul>
         </div>
         <div>
-            <Forms />
+            <Forms v-on:emit="events.form_emit" />
         </div>
     </main>
 </template>
 
 <script>
-import { ref, reactive } from "vue";
+import { reactive } from "vue";
 import Forms from "./Forms.vue";
 
 export default {
@@ -25,14 +25,16 @@ export default {
     },
     setup()
     {
-        const readersNumber = ref(0);
         const todos = reactive([
-            { todo1: "Hello", todo2: "World" },
+            { name: "Hello", value: "World" },
         ]);
-        return {
-            readersNumber,
-            todos
+        const events = {
+            form_emit: (value) =>
+            {
+                console.log(value);
+            }
         };
+        return { todos, events };
     }
 };
 </script>

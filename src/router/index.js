@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Main from "../views/Main.vue";
-import Todo from "../views/Todo.vue";
+import Todo from "../views/Todo/index.vue";
 
 const routes = [
     {
