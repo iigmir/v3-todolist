@@ -9,13 +9,12 @@
             </ul>
         </div>
         <div>
-            <Forms v-on:emit="events.form_emit" />
+            <Forms v-on:emit="form_emit" />
         </div>
     </main>
 </template>
 
 <script>
-import { reactive } from "vue";
 import Forms from "./Forms.vue";
 
 export default {
@@ -23,18 +22,24 @@ export default {
     components: {
         Forms
     },
-    setup()
-    {
-        const todos = reactive([
+    data: () => ({
+        todos: [
             { name: "Hello", value: "World" },
-        ]);
-        const events = {
-            form_emit: (value) =>
-            {
-                console.log(value);
-            }
-        };
-        return { todos, events };
+        ],
+    }),
+    methods: 
+    {
+        form_emit: (api) =>
+        {
+            debugger;
+            const todos = this.todos;
+            debugger;
+            todos.push({
+                name: api.todo_name,
+                value: api.todo_value
+            });
+            this.todos = todos;
+        }
     }
 };
 </script>

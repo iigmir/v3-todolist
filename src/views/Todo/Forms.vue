@@ -18,7 +18,7 @@
 import { reactive } from "vue";
 
 export default {
-    name: "Forms",
+    name: "TodoForm",
     setup( props, { emit })
     {
         const data = reactive({
