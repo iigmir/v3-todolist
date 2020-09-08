@@ -4,12 +4,13 @@
         <div>
             <ul>
                 <li v-for="(item, index) in todos" v-bind:key="index">
-                    <button>X</button> {{ item.name }} : {{ item.value }}
+                    <button v-on:click="remove_todo(index)">X</button>
+                    <span>{{ item.name }} : {{ item.value }}</span>
                 </li>
             </ul>
         </div>
         <div>
-            <Forms v-on:emit="form_emit" />
+            <Forms v-on:emit="add_todo" />
         </div>
     </main>
 </template>
@@ -29,15 +30,19 @@ export default {
     }),
     methods: 
     {
-        form_emit(api)
+        add_todo(api)
         {
-            const todos = this.todos;
-            todos.push({
+            this.todos.push({
                 name: api.todo_name,
                 value: api.todo_value
             });
-            this.todos = todos;
-        }
+        },
+        remove_todo(index)
+        {
+            if (index > -1) {
+                this.todos.splice(index, 1);
+            }
+        },
     }
 };
 </script>
