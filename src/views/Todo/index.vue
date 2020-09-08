@@ -29,11 +29,9 @@ export default {
     }),
     methods: 
     {
-        form_emit: (api) =>
+        form_emit(api)
         {
-            debugger;
             const todos = this.todos;
-            debugger;
             todos.push({
                 name: api.todo_name,
                 value: api.todo_value
