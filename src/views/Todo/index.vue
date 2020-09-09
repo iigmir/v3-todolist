@@ -7,6 +7,12 @@
             </div>
             <div class="col">
                 <a v-bind="dl_json">Download JSON</a>
+                <div style="margin-top:1rem;">
+                    <label class="btn btn-primary" for="load-json">Load JSON</label>
+                    <input hidden type="file" id="load-json" name="load-json" accept="json" v-on:change="load_json" />
+                </div>
+
+                <!-- <input type="file" value="Load file" class="btn btn-primary" /> -->
             </div>
         </div>
         <hr />
@@ -58,6 +64,23 @@ export default {
                 this.todos.splice(index, 1);
             }
         },
+        load_json_core(e)
+        {
+            try {
+                const result = JSON.parse(e.target.result);
+                this.todos = result; 
+            } catch (error) {
+                console.error({ error, data: e.target.result });
+                this.todos = []; 
+            }
+        },
+        load_json(e)
+        {
+            const reader = new FileReader();
+            const file = e.target.files[0];
+            reader.onload = (() => e => this.load_json_core(e) )(file);
+            reader.readAsText(file);
+        }
     }
 };
 </script>
