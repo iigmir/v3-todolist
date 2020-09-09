@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { computed } from "vue";
+
 export default {
     name: "Card",
     props:
@@ -24,11 +26,10 @@ export default {
             }),
         }
     },
-    computed:
+    setup(props)
     {
-        item() {
-            return this.data.item;
-        }
-    }
+        const item = computed( () => props.data.item );
+        return { item };
+    },
 };
 </script>
