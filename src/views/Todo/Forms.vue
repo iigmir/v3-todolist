@@ -1,16 +1,14 @@
 <template>
     <form v-on:submit="event.submit">
-        <fieldset>
-            <legend>Write your todos</legend>
-            <label for="todo-name">Todo 1</label>
-            <input type="text" id="todo-name" name="todo-name" v-model="data.todo_name" />
-        </fieldset>
-        <fieldset>
-            <legend>Write your second todo</legend>
-            <label for="todo-value">Todo 2</label>
-            <input type="text" id="todo-value" name="todo-value" v-model="data.todo_value" />
-        </fieldset>
-        <button type="submit">Submit todo</button>
+        <div class="form-group">
+            <label for="todo-name">Todo name</label>
+            <input type="text" id="todo-name" name="todo-name" class="form-control" v-model="data.todo_name" />
+        </div>
+        <div class="form-group">
+            <label for="todo-value">Todo value</label>
+            <input type="text" id="todo-value" name="todo-value" class="form-control" v-model="data.todo_value" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit todo</button>
     </form>
 </template>
 
