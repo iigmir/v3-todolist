@@ -5,6 +5,9 @@
             <div class="col">
                 <Forms v-on:emit="add_todo" />
             </div>
+            <div class="col">
+                <a v-bind="dl_json">Download JSON</a>
+            </div>
         </div>
         <hr />
         <div class="row row-cols-3">
@@ -29,6 +32,17 @@ export default {
             { name: "Hello", value: "World" },
         ],
     }),
+    computed:
+    {
+        dl_json()
+        {
+            return {
+                href: "data:text/json;charset=utf-8," + encodeURIComponent( JSON.stringify(this.todos) ),
+                download: "todos.json",
+                class: [ "btn", "btn-primary" ],
+            };
+        }
+    },
     methods: 
     {
         add_todo(api)
