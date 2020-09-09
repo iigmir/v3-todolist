@@ -3,7 +3,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="card-text">{{ item.value }}</p>
-            <a href="javascript:;" class="btn btn-primary">Delete</a>
+            <a v-on:click="action(index)" href="javascript:;" class="btn btn-primary">Delete</a>
         </div>
     </article>
 </template>
@@ -26,10 +26,12 @@ export default {
             }),
         }
     },
-    setup(props)
+    setup(props, { emit })
     {
         const item = computed( () => props.data.item );
-        return { item };
+        const index = computed( () => props.data.index );
+        const action = (id = 0) => emit( "emit", id );
+        return { item, index, action };
     },
 };
 </script>

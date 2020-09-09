@@ -2,11 +2,11 @@
     <form v-on:submit="event.submit">
         <div class="form-group">
             <label for="todo-name">Todo name</label>
-            <input type="text" id="todo-name" name="todo-name" class="form-control" v-model="data.todo_name" />
+            <input type="text" id="todo-name" name="todo-name" class="form-control" v-model="data.todo_name" required />
         </div>
         <div class="form-group">
             <label for="todo-value">Todo value</label>
-            <input type="text" id="todo-value" name="todo-value" class="form-control" v-model="data.todo_value" />
+            <input type="text" id="todo-value" name="todo-value" class="form-control" v-model="data.todo_value" required />
         </div>
         <button type="submit" class="btn btn-primary">Submit todo</button>
     </form>
