@@ -29,7 +29,6 @@
     "eslint-plugin-vue": "^7.0.0-alpha.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-cli-plugin-quasar": "^2.0.2",
     "vue-cli-plugin-vue-next": "~0.1.3"
   }
 }
