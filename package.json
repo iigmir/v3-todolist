@@ -15,12 +15,12 @@
     "vuex": "^4.0.0-alpha.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.0",
-    "@vue/cli-plugin-eslint": "^4.5.0",
-    "@vue/cli-plugin-router": "^4.5.0",
-    "@vue/cli-plugin-unit-mocha": "^4.5.0",
-    "@vue/cli-plugin-vuex": "^4.5.0",
-    "@vue/cli-service": "^4.5.0",
+    "@vue/cli-plugin-babel": "^4.5.4",
+    "@vue/cli-plugin-eslint": "^4.5.4",
+    "@vue/cli-plugin-router": "^4.5.4",
+    "@vue/cli-plugin-unit-mocha": "^4.5.4",
+    "@vue/cli-plugin-vuex": "^4.5.4",
+    "@vue/cli-service": "^4.5.4",
     "@vue/compiler-sfc": "^3.0.0-beta.1",
     "@vue/test-utils": "^2.0.0-alpha.1",
     "babel-eslint": "^10.1.0",
@@ -29,6 +29,7 @@
     "eslint-plugin-vue": "^7.0.0-alpha.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "vue-cli-plugin-quasar": "^2.0.2",
     "vue-cli-plugin-vue-next": "~0.1.3"
   }
 }
